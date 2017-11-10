@@ -1,0 +1,33 @@
+#Nombre : Franco Najarro Mallqui 20081384c
+##Respuesta a la pregunta 2B
+
+2 B)
+
+.Una funcion en R puede ser vectorizada ya que todo dato por defecto en R es un vector ,entonces las funciones retornan datos que son tambiem vectores.  las funciones de la biblioteca de R admiten vectores
+como argumentos , como por ejemplo la funcion sum() , min() , max() , sumcum(), prod(). Tambiem existe la posibilidad de vectorizar una funcion del usuario usando las funciones de biblioteca.
+un ejemplo de funcion no vectorizada y una vectorizada es:
+
+
+# Funcion no vectorizada
+sumaNoVectorizada <- function(k){
+s= 0
+for(i in 1:k) s = s + 1/i^2
+return(s)
+}
+# Version vectorizada
+sumaVectorizada <- function(k){
+x = 1:k
+sum(x)
+}
+###
+ 
+.una funcion obedece la regla de reciclaje  que ocurre lo mismo con los vectores por ejemplo la suma c(1:50) + c(1:3)
+ se produce un vector de tamaño del mayor de ellos y el vector mas pequeño se recicla es decir se completan los elementos de forma alternada 
+hasta poder cubrir la dimension del vector mayor(ello implica que la dimension del mayor debe ser multiplo del menor de lo contrario se produce un error) , Lo mismo ocurre en funciones, ya que las funciones tambien son vectores(Todo en R son vectores) ejemplo cumsum(c(1:10)) + cumsum(c(1:5))
+## la ejecucion nos arroja el resultado:
+ cumsum(c(1:10)) + cumsum(c(1:5))
+
+ [1]  2  6 12 20 30 22 31 42 55 70
+> 
+
+
